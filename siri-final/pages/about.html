@@ -1,0 +1,94 @@
+<!-- ═══════════════════════════════════════════════════
+     pages/about.html
+     Paste this block inside index.html where indicated.
+═══════════════════════════════════════════════════ -->
+
+<div id="page-about" class="page">
+
+  <!-- HERO BANNER -->
+  <div class="about-hero">
+    <div style="position:absolute;inset:0;opacity:.05">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="ap" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <polygon points="25,4 28,15 39,15 30,22 33,33 25,27 17,33 20,22 11,15 22,15"
+              fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#ap)"/>
+      </svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="justify-content:center;display:flex">Our Story</div>
+      <h1>Photography by Siri Naidu</h1>
+      <div class="ornament orn-md" style="margin:1.2rem auto 0">◆</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="about-body">
+
+    <!-- LEFT: sticky portrait + quote -->
+    <div class="about-sticky">
+      <!--
+        ── ABOUT PAGE PORTRAIT ──
+        Image is injected by buildAboutImage() in app.js.
+        To change: update ABOUT_PAGE_IMAGE in js/data.js
+      -->
+      <div class="about-pic" id="about-pic">📷</div>
+
+      <blockquote class="about-quote">
+        "Every celebration has a soul. My work is to find it, hold it, and give it back to you — forever."
+      </blockquote>
+    </div>
+
+    <!-- RIGHT: story text -->
+    <div class="about-text">
+      <h2>The Story Behind<br><em>the Lens</em></h2>
+      <p>Photography by Siri Naidu was born from a deep love for Indian culture, ceremony, and the quiet moments that make celebrations truly unforgettable. Based in the heart of Hyderabad, we have spent over a decade documenting the full spectrum of Telugu and South Indian celebrations.</p>
+      <p>From the sacred Vratham rituals performed at dawn to the vibrant colours of a reception evening, we approach every event with reverence, preparation, and genuine excitement for what the day will bring.</p>
+
+      <h2>Our <em>Philosophy</em></h2>
+      <p>We believe great photography is about presence — being in the right place, at the right moment, with the sensitivity to recognise when something beautiful is about to happen. We don't just take photos; we read the room, anticipate emotion, and capture truth.</p>
+      <p>Our editing style is clean, timeless, and carefully balanced — honouring the richness of traditional colours while ensuring every image feels fresh and modern.</p>
+
+      <!-- VALUES GRID -->
+      <div class="vals">
+        <div class="val">
+          <div class="val-icon">◆</div>
+          <div class="val-n">Authenticity</div>
+          <div class="val-d">Real moments, real emotions, genuinely told</div>
+        </div>
+        <div class="val">
+          <div class="val-icon">◈</div>
+          <div class="val-n">Cultural Sensitivity</div>
+          <div class="val-d">Deep respect for tradition and ceremony</div>
+        </div>
+        <div class="val">
+          <div class="val-icon">◇</div>
+          <div class="val-n">Artistry</div>
+          <div class="val-d">Every frame composed with intention</div>
+        </div>
+        <div class="val">
+          <div class="val-icon">✦</div>
+          <div class="val-n">Dedication</div>
+          <div class="val-d">From first consultation to final delivery</div>
+        </div>
+      </div>
+
+      <h2>Based in <em>Hyderabad</em></h2>
+      <p>Located at My Home Srinagar Colony, Yousufguda, Hyderabad, Telangana 500045. We serve clients across Hyderabad and travel throughout Telangana and Andhra Pradesh for destination events.</p>
+      <p>Reach us at
+        
+        <a href="tel:6302287207" style="color:var(--g)">6302287207</a> or
+        <a href="mailto:dhana63022@gmail.com" style="color:var(--g)">dhana63022@gmail.com</a>
+      </p>
+      <div style="margin-top:1.5rem">
+        <button class="btn-solid" onclick="showPage('contact')">Work With Us</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer><div class="wrap" id="about-footer"></div></footer>
+</div><!-- /page-about -->

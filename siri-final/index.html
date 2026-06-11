@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography by Siri Naidu — Hyderabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="goHome()">
+  <img src="images/logo.png" alt="Photography by Siri Naidu" class="nav-logo-img">
+  <div class="nav-logo-text">
+    <span class="nav-logo-top">Photography By</span>
+    <span class="nav-logo-name">Siri Naidu</span>
+  </div>
+</div>
+    <ul class="nav-links">
+      <li><button onclick="goHome()">Home</button></li>
+      <li class="nav-collections">
+        <button onclick="showPage('collections')">Collections ▾</button>
+        <div class="nav-dropdown" id="nav-dropdown"></div>
+      </li>
+      <li><button onclick="showPage('about')">About</button></li>
+      <li><button onclick="showPage('contact')">Contact</button></li>
+      <li><a href="tel:9000008808" class="nav-book">Book Now</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <button onclick="goHome();closeMob()">Home</button>
+  <div class="mob-divider"></div>
+  <button onclick="showPage('collections');closeMob()">Collections</button>
+  <div id="mob-cats"></div>
+  <div class="mob-divider"></div>
+  <button onclick="showPage('about');closeMob()">About</button>
+  <button onclick="showPage('contact');closeMob()">Contact</button>
+  <a href="tel:9000008808" style="color:var(--g)">📞 9000008808</a>
+</div>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <!-- Slideshow backgrounds -->
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('images/img1.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/img2.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/img3.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/img4.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/img5.png')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <!-- Text content -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">Hyderabad, Telangana</div>
+      <h1 class="hero-h1">Moments<br>made<br><span>Timeless.</span></h1>
+      <p class="hero-desc">Wedding &amp; event photography rooted in culture, emotion, and artistry. Every frame is a story — crafted with intention, preserved forever.</p>
+      <div class="hero-btns">
+        <button class="btn-solid" onclick="showPage('collections')">Explore Collections</button>
+        <button class="btn-outline" onclick="showPage('contact')">Book a Session</button>
+      </div>
+      <div class="hero-hours">Mon–Fri: 9 AM–9 PM &nbsp;|&nbsp; Sat–Sun: 11 AM–5 PM</div>
+    </div>
+    <!-- Dots -->
+    <div class="hero-dots">
+      <span class="hero-dot active" onclick="goToSlide(0)"></span>
+      <span class="hero-dot" onclick="goToSlide(1)"></span>
+      <span class="hero-dot" onclick="goToSlide(2)"></span>
+      <span class="hero-dot" onclick="goToSlide(3)"></span>
+      <span class="hero-dot" onclick="goToSlide(4)"></span>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
+    <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Events Covered</span></div>
+    <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">Specialisations</span></div>
+    <div class="stat-item"><span class="stat-num">∞</span><span class="stat-label">Memories Created</span></div>
+  </div>
+
+  <section class="home-cats">
+    <div class="wrap">
+      <div class="home-cats-head">
+        <div class="sec-label">Our Collections</div>
+        <h2 class="sec-title">Every Occasion,<br><em>Beautifully Captured</em></h2>
+        <div class="ornament orn-lg" style="margin:1rem auto 0">◆</div>
+      </div>
+      <div class="hcats-grid" id="hcats-grid"></div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <button class="btn-outline" onclick="showPage('collections')">View All Collections</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-gallery">
+    <div class="wrap">
+      <div class="hgal-head">
+        <div class="sec-label">Featured Moments</div>
+        <h2 class="sec-title">Selected <em>Work</em></h2>
+        <div class="ornament orn-md" style="margin:.9rem auto 0">◆</div>
+      </div>
+      <div class="hgal-grid" id="hgal-grid"></div>
+    </div>
+  </section>
+
+  <div class="home-about">
+    <div class="ha-img-wrap">
+      <div class="ha-img" id="ha-img">📷</div>
+      <div class="ha-accent">Over a Decade of Storytelling</div>
+    </div>
+    <div class="ha-text">
+      <div class="sec-label">About the Photographer</div>
+      <h2 class="sec-title">Crafting <em>Stories</em><br>Through Light</h2>
+      <div class="ornament orn-sm" style="margin:1rem 0 1.5rem">◆</div>
+      <p>At Photography by Siri Naidu, we believe every celebration has a soul. With deep cultural sensitivity and a creative eye, we document your most precious ceremonies.</p>
+      <p>Based in Hyderabad, we bring a blend of artistic vision and genuine warmth to every session.</p>
+      <button class="btn-outline" onclick="showPage('about')" style="margin-top:1rem">Our Story</button>
+    </div>
+  </div>
+
+  <footer><div class="wrap" id="home-footer"></div></footer>
+</div>
+
+<!-- ═══ COLLECTIONS PAGE ═══ -->
+<div id="page-collections" class="page">
+  <div class="colls-hero">
+    <div class="ch-bg">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="cp" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <polygon points="30,4 36,20 52,20 39,30 44,46 30,36 16,46 21,30 8,20 24,20" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#cp)"/>
+      </svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="justify-content:center;display:flex">Collections</div>
+      <h1>Our Specialisations</h1>
+      <div class="ornament orn-md" style="margin:1rem auto 0">◆</div>
+    </div>
+  </div>
+  <div class="colls-body">
+    <div class="wrap">
+      <div class="colls-grid" id="colls-grid"></div>
+    </div>
+  </div>
+  <footer><div class="wrap" id="colls-footer"></div></footer>
+</div>
+
+<!-- ═══ CATEGORY PAGE ═══ -->
+<div id="page-category" class="page">
+  <div class="breadcrumb">
+    <button onclick="goHome()">Home</button>
+    <span>›</span>
+    <button onclick="showPage('collections')">Collections</button>
+    <span>›</span>
+    <span id="bc-name" style="color:var(--g)">Category</span>
+  </div>
+  <div class="cath" id="cath">
+    <div class="cath-bg" id="cath-bg"></div>
+    <svg class="cath-mandala" id="cath-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="78" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="60" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="42" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="22" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="8"  stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+    </svg>
+    <div class="cath-content">
+      <div class="cath-label"   id="cath-label">Collection</div>
+      <h1 class="cath-title"    id="cath-title">Category</h1>
+      <div class="cath-tagline" id="cath-tagline">Capturing your most precious moments</div>
+    </div>
+  </div>
+  <div class="cat-intro" id="cat-intro-wrap"></div>
+  <div class="rdiv">
+    <svg viewBox="0 0 280 38" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="19" x2="108" y2="19" stroke="#C9A84C" stroke-width=".8"/>
+      <line x1="172" y1="19" x2="280" y2="19" stroke="#C9A84C" stroke-width=".8"/>
+      <polygon points="140,7 149,19 140,31 131,19" fill="none" stroke="#C9A84C" stroke-width=".8"/>
+      <circle cx="140" cy="19" r="3.5" fill="#C9A84C"/>
+      <polygon points="118,13 124,19 118,25 112,19" fill="none" stroke="#C9A84C" stroke-width=".8" opacity=".6"/>
+      <polygon points="162,13 168,19 162,25 156,19" fill="none" stroke="#C9A84C" stroke-width=".8" opacity=".6"/>
+      <circle cx="107" cy="19" r="2" fill="#C9A84C" opacity=".5"/>
+      <circle cx="173" cy="19" r="2" fill="#C9A84C" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="cat-gallery-wrap">
+    <div class="wrap">
+      <div class="gal-section-label">Gallery</div>
+      <div class="gal-bento" id="gal-bento"></div>
+    </div>
+  </div>
+  <div class="cat-cta">
+    <h3 id="cta-title">Ready to Book?</h3>
+    <p  id="cta-sub">Let's create something beautiful together</p>
+    <button class="btn-solid" onclick="showPage('contact')">Book This Package</button>
+    &nbsp;&nbsp;
+    <button class="btn-outline" style="border-color:#555;color:#bbb" onclick="showPage('collections')">← Back to Collections</button>
+  </div>
+  <footer><div class="wrap" id="cat-footer"></div></footer>
+</div>
+
+<!-- ═══ ABOUT PAGE ═══ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div style="position:absolute;inset:0;opacity:.05">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="ap" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <polygon points="25,4 28,15 39,15 30,22 33,33 25,27 17,33 20,22 11,15 22,15" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#ap)"/>
+      </svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="justify-content:center;display:flex">Our Story</div>
+      <h1>Photography by Siri Naidu</h1>
+      <div class="ornament orn-md" style="margin:1.2rem auto 0">◆</div>
+    </div>
+  </div>
+  <div class="about-body">
+    <div class="about-sticky">
+      <div class="about-pic" id="about-pic">📷</div>
+      <blockquote class="about-quote">"Every celebration has a soul. My work is to find it, hold it, and give it back to you — forever."</blockquote>
+    </div>
+    <div class="about-text">
+      <h2>The Story Behind<br><em>the Lens</em></h2>
+      <p>Photography by Siri Naidu was born from a deep love for Indian culture, ceremony, and the quiet moments that make celebrations truly unforgettable. Based in Hyderabad, we have spent over a decade documenting Telugu and South Indian celebrations.</p>
+      <p>From sacred Vratham rituals to vibrant reception evenings, we approach every event with reverence, preparation, and genuine excitement.</p>
+      <h2>Our <em>Philosophy</em></h2>
+      <p>We believe great photography is about presence — being in the right place, at the right moment, with the sensitivity to recognise when something beautiful is about to happen.</p>
+      <div class="vals">
+        <div class="val"><div class="val-icon">◆</div><div class="val-n">Authenticity</div><div class="val-d">Real moments, real emotions</div></div>
+        <div class="val"><div class="val-icon">◈</div><div class="val-n">Cultural Sensitivity</div><div class="val-d">Deep respect for tradition</div></div>
+        <div class="val"><div class="val-icon">◇</div><div class="val-n">Artistry</div><div class="val-d">Every frame composed with intention</div></div>
+        <div class="val"><div class="val-icon">✦</div><div class="val-n">Dedication</div><div class="val-d">From consultation to final delivery</div></div>
+      </div>
+      <h2>Based in <em>Hyderabad</em></h2>
+      <p>My Home Srinagar Colony, Yousufguda, Hyderabad, Telangana 500045.<br>
+        
+        <a href="tel:6302287207" style="color:var(--g)">6302287207</a> ·
+        <a href="mailto:dhana63022@gmail.com" style="color:var(--g)">dhana63022@gmail.com</a>
+      </p>
+      <div style="margin-top:1.5rem">
+        <button class="btn-solid" onclick="showPage('contact')">Work With Us</button>
+      </div>
+    </div>
+  </div>
+  <footer><div class="wrap" id="about-footer"></div></footer>
+</div>
+
+<!-- ═══ CONTACT PAGE ═══ -->
+<div id="page-contact" class="page">
+  <div class="contact-hero">
+    <div style="position:absolute;inset:0;opacity:.05">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="ctp" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="9" fill="none" stroke="#C9A84C" stroke-width=".5"/>
+            <circle cx="20" cy="20" r="2.5" fill="#C9A84C" opacity=".3"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#ctp)"/>
+      </svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="justify-content:center;display:flex">Let's Create Together</div>
+      <h1>Get in Touch</h1>
+      <div class="ornament orn-md" style="margin:1.2rem auto 0">◆</div>
+    </div>
+  </div>
+  <div class="contact-body">
+    <div class="ci-info">
+      <h3>Contact Details</h3>
+      <div class="ci-row"><span class="ci-dot">◆</span><div class="ci-txt"><a href="tel:6302287207">6302287207</a></div></div>
+      <div class="ci-row"><span class="ci-dot">◇</span><div class="ci-txt"><a href="mailto:dhana63022@gmail.com">dhana63022@gmail.com</a></div></div>
+      <div class="ci-row"><span class="ci-dot">✦</span><div class="ci-txt">My Home Srinagar Colony, Yousufguda,<br>Hyderabad, Telangana 500045</div></div>
+      <h3>Working Hours</h3>
+      <div class="hrs-row"><b>Monday – Friday</b><span>9:00 AM – 9:00 PM</span></div>
+      <div class="hrs-row"><b>Saturday – Sunday</b><span>11:00 AM – 5:00 PM</span></div>
+      <h3>Follow Along</h3>
+      <div class="soc-row">
+        <a href="https://www.instagram.com/photography_by_siri_naidu" target="_blank" class="soc-b">IG</a>
+        <a href="https://www.facebook.com/share/1JZyDX3ASm/" target="_blank" class="soc-b">FB</a>
+      </div>
+    </div>
+    <form onsubmit="sendToWhatsApp(event)">
+      <div class="sec-label" style="margin-bottom:1.5rem">Send an Inquiry</div>
+      <div class="cf-row">
+        <div class="cf-grp"><label class="cf-label">Name *</label><input class="cf-inp" name="name" required placeholder="Your name"></div>
+        <div class="cf-grp"><label class="cf-label">Phone *</label><input class="cf-inp" name="phone" required placeholder="Your number" type="tel"></div>
+      </div>
+      <div class="cf-grp"><label class="cf-label">Email *</label><input class="cf-inp" name="email" required placeholder="your@email.com" type="email"></div>
+      <div class="cf-grp">
+        <label class="cf-label">Event Type</label>
+        <select class="cf-sel" name="event">
+          <option value="">Select event type</option>
+          <option>Wedding</option><option>Engagement</option><option>Reception</option>
+          <option>Vratham</option><option>Couple Shoot</option><option>Personal Shoot</option><option>Other</option>
+        </select>
+      </div>
+      <div class="cf-grp"><label class="cf-label">Event Date</label><input class="cf-inp" type="date" name="date"></div>
+      <div class="cf-grp"><label class="cf-label">Message</label><textarea class="cf-ta" name="msg" placeholder="Tell us about your vision, venue, and any special requirements…"></textarea></div>
+      <button type="submit" class="cf-submit" id="cf-btn">Send Inquiry</button>
+    </form>
+  </div>
+  <footer><div class="wrap" id="contact-footer"></div></footer>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="if(event.target===this)closeLB()">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/916302287207" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="16" fill="#25D366"/>
+    <path d="M23.5 8.5A10.47 10.47 0 0016.01 5.5C10.76 5.5 6.5 9.76 6.5 15.01c0 1.85.48 3.65 1.4 5.24L6.4 25.6l5.5-1.44a10.44 10.44 0 004.1.83h.01c5.25 0 9.5-4.26 9.5-9.51 0-2.54-.99-4.93-2.01-6.98zm-7.49 14.63h-.01a8.67 8.67 0 01-4.42-1.21l-.32-.19-3.27.86.87-3.19-.2-.33a8.65 8.65 0 01-1.33-4.57c0-4.78 3.89-8.67 8.68-8.67 2.32 0 4.49.9 6.13 2.54a8.61 8.61 0 012.54 6.14c0 4.79-3.89 8.62-8.67 8.62zm4.75-6.49c-.26-.13-1.54-.76-1.78-.84-.24-.09-.41-.13-.58.13-.17.26-.65.84-.8 1.01-.15.17-.29.19-.55.06-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.55-1.45-1.81-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.91-.21-.5-.42-.43-.58-.44h-.49c-.17 0-.44.06-.67.32-.23.26-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.54-.63 1.76-1.24.22-.6.22-1.12.15-1.23-.06-.1-.23-.16-.49-.29z" fill="white"/>
+  </svg>
+</a>
+<script>
+/* ── HERO SLIDESHOW ── */
+(function(){
+  var slides = document.querySelectorAll('.hero-slide');
+  var dots   = document.querySelectorAll('.hero-dot');
+  var current = 0;
+  var timer;
+
+  function goToSlide(n){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next(){ goToSlide(current + 1); }
+
+  function startTimer(){ timer = setInterval(next, 4000); }
+  function resetTimer(){ clearInterval(timer); startTimer(); }
+
+  // expose for dot onclick
+  window.goToSlide = function(n){ goToSlide(n); resetTimer(); };
+
+  startTimer();
+})();
+</script>
+</body>
+</html>

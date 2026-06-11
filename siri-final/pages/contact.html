@@ -1,0 +1,110 @@
+<!-- ═══════════════════════════════════════════════════
+     pages/contact.html
+     Paste this block inside index.html where indicated.
+═══════════════════════════════════════════════════ -->
+
+<div id="page-contact" class="page">
+
+  <!-- HERO BANNER -->
+  <div class="contact-hero">
+    <div style="position:absolute;inset:0;opacity:.05">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="ctp" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="9"   fill="none" stroke="#C9A84C" stroke-width=".5"/>
+            <circle cx="20" cy="20" r="2.5" fill="#C9A84C" opacity=".3"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#ctp)"/>
+      </svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="justify-content:center;display:flex">Let's Create Together</div>
+      <h1>Get in Touch</h1>
+      <div class="ornament orn-md" style="margin:1.2rem auto 0">◆</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="contact-body">
+
+    <!-- LEFT: contact info -->
+    <div class="ci-info">
+      <h3>Contact Details</h3>
+      <div class="ci-row">
+        <span class="ci-dot">◆</span>
+        <div class="ci-txt">
+          
+          <a href="tel:6302287207">6302287207</a>
+        </div>
+      </div>
+      <div class="ci-row">
+        <span class="ci-dot">◇</span>
+        <div class="ci-txt">
+          <a href="mailto:dhana63022@gmail.com">dhana63022@gmail.com</a>
+        </div>
+      </div>
+      <div class="ci-row">
+        <span class="ci-dot">✦</span>
+        <div class="ci-txt">
+          My Home Srinagar Colony, Yousufguda,<br>
+          Hyderabad, Telangana 500045
+        </div>
+      </div>
+
+      <h3>Working Hours</h3>
+      <div class="hrs-row"><b>Monday – Friday</b><span>9:00 AM – 9:00 PM</span></div>
+      <div class="hrs-row"><b>Saturday – Sunday</b><span>11:00 AM – 5:00 PM</span></div>
+
+      <h3>Follow Along</h3>
+      <div class="soc-row">
+        <a href="https://www.instagram.com/photography_by_siri_naidu" target="_blank" class="soc-b">IG</a>
+        <a href="https://www.facebook.com/share/1JZyDX3ASm/" target="_blank" class="soc-b">FB</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: inquiry form -->
+    <form onsubmit="handleForm(event)">
+      <div class="sec-label" style="margin-bottom:1.5rem">Send an Inquiry</div>
+      <div class="cf-row">
+        <div class="cf-grp">
+          <label class="cf-label">Name *</label>
+          <input class="cf-inp" name="name" required placeholder="Your name">
+        </div>
+        <div class="cf-grp">
+          <label class="cf-label">Phone *</label>
+          <input class="cf-inp" name="phone" required placeholder="Your number" type="tel">
+        </div>
+      </div>
+      <div class="cf-grp">
+        <label class="cf-label">Email *</label>
+        <input class="cf-inp" name="email" required placeholder="your@email.com" type="email">
+      </div>
+      <div class="cf-grp">
+        <label class="cf-label">Event Type</label>
+        <select class="cf-sel" name="event">
+          <option value="">Select event type</option>
+          <option>Wedding</option>
+          <option>Engagement</option>
+          <option>Reception</option>
+          <option>Vratham</option>
+          <option>Couple Shoot</option>
+          <option>Personal Shoot</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="cf-grp">
+        <label class="cf-label">Event Date</label>
+        <input class="cf-inp" type="date" name="date">
+      </div>
+      <div class="cf-grp">
+        <label class="cf-label">Message</label>
+        <textarea class="cf-ta" name="msg" placeholder="Tell us about your vision, venue, and any special requirements…"></textarea>
+      </div>
+      <button type="submit" class="cf-submit" id="cf-btn">Send Inquiry</button>
+    </form>
+
+  </div>
+
+  <footer><div class="wrap" id="contact-footer"></div></footer>
+</div><!-- /page-contact -->

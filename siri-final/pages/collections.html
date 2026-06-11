@@ -1,0 +1,36 @@
+<!-- ═══════════════════════════════════════════════════
+     pages/collections.html
+     Paste this block inside index.html where indicated.
+═══════════════════════════════════════════════════ -->
+
+<div id="page-collections" class="page">
+
+  <!-- HERO BANNER -->
+  <div class="colls-hero">
+    <div class="ch-bg">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="cp" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <polygon points="30,4 36,20 52,20 39,30 44,46 30,36 16,46 21,30 8,20 24,20"
+              fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#cp)"/>
+      </svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="justify-content:center;display:flex">Collections</div>
+      <h1>Our Specialisations</h1>
+      <div class="ornament orn-md" style="margin:1rem auto 0">◆</div>
+    </div>
+  </div>
+
+  <!-- GRID (built by buildCollsGrid() in app.js) -->
+  <div class="colls-body">
+    <div class="wrap">
+      <div class="colls-grid" id="colls-grid"></div>
+    </div>
+  </div>
+
+  <footer><div class="wrap" id="colls-footer"></div></footer>
+</div><!-- /page-collections -->

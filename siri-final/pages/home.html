@@ -1,0 +1,91 @@
+<!-- ═══════════════════════════════════════════════════
+     pages/home.html
+     Paste this block inside index.html where indicated.
+═══════════════════════════════════════════════════ -->
+
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Hyderabad, Telangana</div>
+      <h1 class="hero-h1">Moments<br>made<br><span>Timeless.</span></h1>
+      <p class="hero-desc">Wedding &amp; event photography rooted in culture, emotion, and artistry. Every frame is a story — crafted with intention, preserved forever.</p>
+      <div class="hero-btns">
+        <button class="btn-solid" onclick="showPage('collections')">Explore Collections</button>
+        <button class="btn-outline" onclick="showPage('contact')">Book a Session</button>
+      </div>
+      <div class="hero-hours">Mon–Fri: 9 AM–9 PM &nbsp;|&nbsp; Sat–Sun: 11 AM–5 PM</div>
+    </div>
+    <div class="hero-right">
+      <div class="camera-glow"></div>
+      <canvas id="camera-canvas"></canvas>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num">10+</span><span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">500+</span><span class="stat-label">Events Covered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">7</span><span class="stat-label">Specialisations</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">∞</span><span class="stat-label">Memories Created</span>
+    </div>
+  </div>
+
+  <!-- COLLECTIONS OVERVIEW GRID (built by JS) -->
+  <section class="home-cats">
+    <div class="wrap">
+      <div class="home-cats-head">
+        <div class="sec-label">Our Collections</div>
+        <h2 class="sec-title">Every Occasion,<br><em>Beautifully Captured</em></h2>
+        <div class="ornament orn-lg" style="margin:1rem auto 0">◆</div>
+      </div>
+      <div class="hcats-grid" id="hcats-grid"></div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <button class="btn-outline" onclick="showPage('collections')">View All Collections</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED GALLERY (built by JS) -->
+  <section class="home-gallery">
+    <div class="wrap">
+      <div class="hgal-head">
+        <div class="sec-label">Featured Moments</div>
+        <h2 class="sec-title">Selected <em>Work</em></h2>
+        <div class="ornament orn-md" style="margin:.9rem auto 0">◆</div>
+      </div>
+      <div class="hgal-grid" id="hgal-grid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <div class="home-about">
+    <div class="ha-img-wrap">
+      <!--
+        ── HOME ABOUT IMAGE ──
+        Image is injected by buildHomeAboutImage() in app.js.
+        To change: update HOME_ABOUT_IMAGE in js/data.js
+      -->
+      <div class="ha-img" id="ha-img">📷</div>
+      <div class="ha-accent">Over a Decade of Storytelling</div>
+    </div>
+    <div class="ha-text">
+      <div class="sec-label">About the Photographer</div>
+      <h2 class="sec-title">Crafting <em>Stories</em><br>Through Light</h2>
+      <div class="ornament orn-sm" style="margin:1rem 0 1.5rem">◆</div>
+      <p>At Photography by Siri Naidu, we believe every celebration has a soul. With deep cultural sensitivity and a creative eye, we document your most precious ceremonies — from traditional Telugu rituals to modern celebrations.</p>
+      <p>Based in Hyderabad, we bring a blend of artistic vision and genuine warmth to every session — ensuring you feel comfortable and your memories are authentically preserved.</p>
+      <button class="btn-outline" onclick="showPage('about')" style="margin-top:1rem">Our Story</button>
+    </div>
+  </div>
+
+  <footer><div class="wrap" id="home-footer"></div></footer>
+</div><!-- /page-home -->

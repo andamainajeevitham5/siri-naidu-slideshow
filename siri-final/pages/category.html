@@ -1,0 +1,74 @@
+<!-- ═══════════════════════════════════════════════════
+     pages/category.html
+     Paste this block inside index.html where indicated.
+     Content is populated dynamically by openCat() in app.js.
+═══════════════════════════════════════════════════ -->
+
+<div id="page-category" class="page">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <button onclick="goHome()">Home</button>
+    <span>›</span>
+    <button onclick="showPage('collections')">Collections</button>
+    <span>›</span>
+    <span id="bc-name" style="color:var(--g)">Wedding</span>
+  </div>
+
+  <!-- CATEGORY HERO BANNER -->
+  <div class="cath" id="cath">
+    <div class="cath-bg" id="cath-bg"></div>
+    <svg class="cath-mandala" id="cath-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="78" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="60" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="42" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="22" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+      <circle cx="100" cy="100" r="8"  stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+    </svg>
+    <div class="cath-content">
+      <div class="cath-label"  id="cath-label">Collection</div>
+      <h1 class="cath-title"   id="cath-title">Wedding</h1>
+      <div class="cath-tagline" id="cath-tagline">Capturing your most precious moments</div>
+    </div>
+  </div>
+
+  <!-- INFO BLOCK (injected by openCat()) -->
+  <div class="cat-intro" id="cat-intro-wrap"></div>
+
+  <!-- RANGOLI DIVIDER -->
+  <div class="rdiv">
+    <svg viewBox="0 0 280 38" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0"   y1="19" x2="108" y2="19" stroke="#C9A84C" stroke-width=".8"/>
+      <line x1="172" y1="19" x2="280" y2="19" stroke="#C9A84C" stroke-width=".8"/>
+      <polygon points="140,7 149,19 140,31 131,19" fill="none" stroke="#C9A84C" stroke-width=".8"/>
+      <circle cx="140" cy="19" r="3.5" fill="#C9A84C"/>
+      <polygon points="118,13 124,19 118,25 112,19" fill="none" stroke="#C9A84C" stroke-width=".8" opacity=".6"/>
+      <polygon points="162,13 168,19 162,25 156,19" fill="none" stroke="#C9A84C" stroke-width=".8" opacity=".6"/>
+      <circle cx="107" cy="19" r="2" fill="#C9A84C" opacity=".5"/>
+      <circle cx="173" cy="19" r="2" fill="#C9A84C" opacity=".5"/>
+    </svg>
+  </div>
+
+  <!-- BENTO GALLERY
+       6 images per category, built by buildCatGallery() in app.js.
+       To change images: update the gallery[] array for each category in js/data.js
+  -->
+  <div class="cat-gallery-wrap">
+    <div class="wrap">
+      <div class="gal-section-label">Gallery — I</div>
+      <div class="gal-bento" id="gal-bento"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="cat-cta" id="cat-cta">
+    <h3 id="cta-title">Ready to Book?</h3>
+    <p id="cta-sub">Let's create something beautiful together</p>
+    <button class="btn-solid" onclick="showPage('contact')">Book This Package</button>
+    &nbsp;&nbsp;
+    <button class="btn-outline" style="border-color:#555;color:#bbb" onclick="showPage('collections')">← Back to Collections</button>
+  </div>
+
+  <footer><div class="wrap" id="cat-footer"></div></footer>
+</div><!-- /page-category -->
